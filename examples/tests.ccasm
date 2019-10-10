@@ -1,0 +1,22 @@
+# This code to show how
+# flags are changed by
+# the '?' (tst) operator
+
+x = 0
+y = 1
+
+x ? y
+
+# x != y
+trap
+
+
+x = 1
+
+x ? y
+
+# x == y
+trap
+
+
+exit

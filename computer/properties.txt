@@ -1,0 +1,6 @@
+	All properties of the computer.
+
+- 16 bit
+- Little Endian (0x1234 is stored 0x34 0x12 in memory)
+- Integer only (no floating point calculus)
+- Jumps are absolute, not relative (GO ADDRESS not GO OFFSET)

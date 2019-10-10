@@ -1,0 +1,87 @@
+# This example computes a value in the fibonacci sequence.
+
+@ main
+	cc()
+leave
+
+
+@ cc
+	# The number of terms to compute
+	x = 10
+
+	fib()
+leave
+
+
+# - x = index of the return value in the fibonacci sequence 
+# - Returns the value in the fibonacci sequence at index x in y
+@ fib
+	#	Stack :
+	# - 4 : i, Index in the sequence
+	# - 6 : a element
+	# - 8 : b element
+	# - 10 : c element
+
+	# Algorithm :
+	# * a, b and c are 3 consecutive elements of the sequence in order
+	# 1. Init b to be the first element (0 index) so b = 0
+	# 	init c to 1, init a to a temporary value
+	# 2. For each iteration :
+	# 3. Move a, b and c to be the next element :
+	#	a = b and b = c, c then is a + b
+	# 4. Decrease i
+	# 5. If i == 0, the loop is finished otherwise loop again
+	# 6. End the loop
+	# 7. Return c
+
+
+	# i = arg 1
+	> x
+
+	# 1. #	
+	# a = 0
+	x = 0
+	> x
+
+	# b = 0
+	> x
+
+	# c = 1
+	x++
+	> x
+
+	# 2. #	
+	# Loop until i is not 0
+	@ fib_loop_start
+		# 3. #	
+		# a = b
+		x :< 8
+		x :> 6
+
+		# b = c
+		x :< 10
+		x :> 8
+
+		# c = a + b
+		x :< 6
+		y :< 8
+		x += y
+		x :> 10
+
+		# 4. #	
+		# Decrease i
+		x :< 4
+		x--
+		x :> 4
+
+		# Output the current sequence term with a line feed after
+		$y
+		$
+
+		# 5. #
+		# Loop again if i != 0
+		x ? 0
+		fib_loop_start(!)
+
+	# 6. and 7. are implicits because the value of c is in y
+leave

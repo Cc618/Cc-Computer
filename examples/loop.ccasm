@@ -1,0 +1,27 @@
+# This example shows
+# how to make a for
+# loop with x and y
+# registers
+# x goes from 1 to 8
+# (inclusive)
+
+
+# x = start (counter)
+# y = end
+x = 0
+y = 8
+
+# Start of the loop
+> start
+
+# Increase counter
+x++
+
+x ? y
+
+trap
+
+# If x != y, loop again
+start(!)
+
+exit

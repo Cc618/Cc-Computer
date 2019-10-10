@@ -1,0 +1,32 @@
+# This example shows
+# how to make functions
+
+
+> main
+	x = 7
+	y = 4
+
+	# Call the function debug and then debug2
+	debug()
+	debug2()
+
+	trap
+
+	# To return 0
+	x = 0
+leave
+
+
+# Shows the debugger
+> debug
+	trap
+
+	x++
+	y++
+leave
+
+
+# Another function
+> debug2
+	x = 127
+leave

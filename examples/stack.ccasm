@@ -1,0 +1,52 @@
+# Shows how the stack works
+
+@ main
+	cc()
+
+	trap
+leave
+
+@ cc
+	x = 65535
+
+	# Save x on the stack
+	# The offset from the
+	# return register r
+	# is 4
+	> x
+	
+	x = 87
+	
+	# Restore it
+	< x
+
+
+	x = 4
+
+	# Offset : 4
+	> x
+	
+	x++
+	# Offset : 6
+	> x
+
+	x++
+	# Offset : 8
+	> x
+
+	# Load the value at
+	# the offset 6 in y
+	# (y = 5)
+	y :< 6
+
+	# Display y
+	$ y
+	$
+
+	y = 15
+
+	# Save y at
+	# the offset 6
+	y :> 6
+
+leave

@@ -1,0 +1,25 @@
+# This example shows
+# how to make a for
+# loop with x and a
+# constant
+# x goes from 1 to 6
+# (inclusive)
+
+
+# x = start (counter)
+x = 0
+
+# Start of the loop
+> start
+
+# Increase counter
+x++
+
+x ? 6
+
+trap
+
+# If x != 6, loop again
+start(!)
+
+exit

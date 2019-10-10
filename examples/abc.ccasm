@@ -1,0 +1,25 @@
+# Prints each letter of the alphabet
+
+@ main
+	cc()
+leave
+
+@ cc
+	# Ascii code for 'A' 
+	y = 65
+
+	@ loop_start
+		# Print y as char
+		$c y
+
+		# Increase y
+		y++
+
+		# Continue if y < 91
+		y ? 91
+		loop_start(<)
+
+	# New line
+	$
+leave
+

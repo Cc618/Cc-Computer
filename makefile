@@ -7,7 +7,7 @@ all: assembler/makefile computer/makefile
 clean: assembler/makefile computer/makefile
 	cd computer && make clean
 	cd assembler && make clean
-	rm -rf bin/*
+	rm -rf bin
 
 
 example-abc: bin/ccasm bin/cc_computer
